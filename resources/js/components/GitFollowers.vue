@@ -1,7 +1,6 @@
 <template>
     <div v-if="gitfollowers.length > 0" class="git-follower">
-        <!--<div class="followers-count" v-text="gitfollowers.length"></div>-->
-        <div class="followers-label">Followers:</div>
+        <!--<div class="followers-label">Followers:</div>-->
         <div v-for="gitfollower in gitfollowers" :key="gitfollower.id" class="git-follower">
             <div>
                 <img width="50" height="50" :src="gitfollower.avatar_url" :title="gitfollower.login"/>
@@ -44,12 +43,8 @@
                     this.gitfollowers = this.gitfollowers.concat(data);
                     this.pageCount++;
                     if (data.length < 30) {
-                        //it's the last page of followers
-                        //remove the more button
+                        //it's the last page of followers, remove the more button
                         this.hideMore = true;
-                        if (data.length == 0 && this.pageCount == 1) {
-                            //no followers at all retrieved, lets mention that
-                        }
                     }
                 })
                 .catch(function (error) {
@@ -57,7 +52,5 @@
                 });
             }
         }
-
-        
     }
 </script>

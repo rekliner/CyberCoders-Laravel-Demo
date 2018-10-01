@@ -1,17 +1,14 @@
 <template>
     <div>
         <div id="searchForm">
-            <input v-model.lazy="searchTerm" placeholder="rekliner">
+            <input v-model.lazy="searchTerm" placeholder="Search GIT Users">
             <button v-on:click="onSearch">Search</button>
         </div>
         <gitresults :gitusers="gitusers"></gitresults>
     </div>
 </template>
-
 <script>
-    //Vue.component('gitresults', require('./components/GitResults.vue'));
     import gitresults from './GitResults.vue'
-
     export default {
         data() {
             return {

@@ -5,13 +5,14 @@
             <div v-for="gituser in gitusers" :key="gituser.id" class="search-result">
                 <div class="search-result-user">
                     <div class="search-result-user-icon">
-                    
                     <img width="75" height="75" :src="gituser.avatar_url" />
                     <div v-text="gituser.login"></div>
                     </div>
+                </div>    
+                <div>
+                    <gitcount :user="gituser.login"></gitcount>
+                    <gitfollowers :followuser="gituser.login"></gitfollowers>
                 </div>
-                
-                <div><gitfollowers :followuser="gituser.login"></gitfollowers></div>
             </div>
         </div>
         <div v-if="gitusers.length == 0">
@@ -22,6 +23,7 @@
 
 <script>
     import gitfollowers from './GitFollowers.vue'
+    import gitcount from './GitCount.vue'
     export default {
         data() {
             return {
@@ -33,7 +35,8 @@
             gitusers: Array
         },
         components: {
-            gitfollowers
+            gitfollowers,
+            gitcount
         },
         methods: {
         }

@@ -16,8 +16,6 @@ window.Vue = require('vue');
  */
 
 Vue.component('gitsearch', require('./components/GitSearch.vue'));
-//Vue.component('gitresults', require('./components/GitResults.vue'));
-//Vue.component('gitfollowers', require('./components/GitFollowers.vue'));
 
 const app = new Vue({
     el: '#app'
