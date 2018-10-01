@@ -7,6 +7,9 @@ This API acts as midleware to consume the GitHub API through the guzzle package.
 
 
 Change these environment variables if you play around with it:
+
 APP_URL=http://example.com/projectname/public
+
 GIT_USER=example_user
+
 GIT_PW=example_pass
